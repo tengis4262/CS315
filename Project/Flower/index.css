@@ -1,0 +1,117 @@
+.header {}
+
+.top-header {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.mid-header {
+  background-color: #635da8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links-n-search {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.search-box {
+  margin-top: 20px;
+  display: flex;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+.bottom-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: beige;
+  padding: 5px;
+}
+
+.banner {
+  background-image: url(https://media.architecturaldigest.com/photos/61eeb1db019f04fb96929421/16:9/pass/ssklad1biqwdjanmgv8f.jpeg);
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.items-cotainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  flex-wrap: wrap;
+  
+}
+
+.item {
+  width: 150px;
+}
+
+.item-img {
+  width: inherit;
+}
+
+.item-info {
+  text-align: center;
+}
+
+.item-info .delivery-type {
+  text-transform: uppercase;
+}
+
+.item-info .name {
+  color: #635da8;
+  font-size: 15px;
+}
+
+.item-info .price {
+  font-weight: bold;
+  font-size: 15px;
+
+}
+
+.chip {
+  background-color: #635da8;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 16px;
+  margin: 4px;
+}
+.footer{
+  border-top: 1px solid #ccc;
+  background-color: #ececec;
+}
+.footer-links{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+.links{
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  
+}
+
+.header-link{
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

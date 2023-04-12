@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dom.css">
+    <script>
+        window.onload = function () {
+            //Find By ID
+            let element = document.getElementById('inputID');
+            console.log(element);
+
+            //Query Selector - Find API
+            let element1 = document.querySelectorAll('form input');
+
+            for (const elem of element1) {
+                console.log(elem);
+            }
+
+            console.log(element1)
+            //Read Attribute
+            console.log(element.getAttribute('type'));
+
+
+            //change attribute
+            // element.setAttribute('type','radio');
+            //document.getElementById
+            //document.querySelectorAll()
+
+            //Update
+            //element.setAttribute
+            //element.getAttribute
+
+            //Change content
+            //element.innerHtml()
+            //element.innerHtml
+
+
+            element.setAttribute('value', 'SOme Value');
+            //Content
+            // document.getElementById("myTextArea").innerHTML = 'Changed Text';
+
+            let elem1 = document.getElementById("inputID1");
+            let elem2 = document.getElementById("inputID2");
+            let temp = elem1;
+            console.log("test", elem2.getAttribute('value'));
+            // elem1.setAttribute('value', elem2.getAttribute)
+            let ab = elem2.getAttribute('value');
+            let bc = temp.getAttribute('value');
+            elem1.setAttribute('value', ab);
+            // elem2.setAttribute('value',temp.getAttribute('value'));
+            elem2.setAttribute('value', bc);
+            let first = document.getElementById("1")
+            let second = document.getElementById("2")
+            let change = document.getElementById("3")
+            let text = change.getAttribute('value');
+            let fString = first.innerHTML.trim();
+            let secString = second.innerHTML.trim();
+            let oldString = change.innerHTML;
+
+            console.log(oldString)
+
+            change.innerHTML = change.innerHTML + first.innerHTML.trim() + " " + second.innerHTML.trim();
+
+            // let idChange = document.getElementById('programs');
+
+            // for(const chElem of idChange){
+            //     console.log(chElem);
+            // }
+
+            // const idd = null;
+
+            // idd.getAttribute();
+
+            // idd = document.getElementById('f');
+            //     console.log(idd)
+
+
+            // var iddd = document.getElementById('jerry')
+            // console.log(iddd)
+
+            // let revList = document.querySelectorAll('form ul');
+            // for (let i = revList.length - 1; i <= 0; i--) {
+            //     console.log("Check" + revList[i].innerHTML)
+            // }
+
+            let elem = document.getElementById('innerDIV');
+            let em1 = document.getElementById('myDIV');
+
+            // em1.outerHTML = '<p id="myID">My Paragraph</p>';
+
+            let newEl = document.createElement('holo');
+            newEl.innerHTML = 'Stockholm2021';
+            // em1.append(elem);
+            // em1.append(newEl);
+            elem.before(newEl);
+
+
+            // let oLem = document.querySelector('select option')
+            let olem = document.querySelectorAll('select option')
+            let nElem = document.createElement('option')
+            nElem.innerHTML = 'new Option';
+
+            // let desiredPos = 0;
+            for (let i = 0; i < olem.length; i++) {
+                // olem[desiredPos].after(nElem)
+
+                console.log(olem[0].outerHTML)
+                let checker = '111';
+
+                for (let i = 0; i < olem.length; i++) {
+                    if (olem[i].getAttribute('id') == checker) {
+                        olem[i].outerHTML = '<option id="115" class="npt" value="Unen" style="font-size:larger"> First </option>';
+                    }
+                }
+                for (let i = 0; i < olem.length; i++) {
+                    olem[i].setAttribute('style', 'color:red; border:1px; background-color:black; ')
+                }
+                olem[0].innerHTML.replace('First','NewNew')
+                // if(olem[i].getElementById.trim==('111')){
+                //     olem[i].outerHTML = '<option id="111" class="npt" value="Unen">';
+
+                // }
+
+            }
+            // oLem.after(nElem);
+
+
+
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <form>
+
+
+        <select>
+            <option id="111" class="opt" value="Onen">
+                First
+            </option>
+            <option id="112" class="opt">
+                Second
+            </option>
+            <option id="112" clas="npt">
+                Third
+            </option>
+            <option id="112" class="opt">
+                Forth
+            </option>
+            <option id="112" clas="npt">
+                Fifth
+            </option>
+        </select>
+
+
+
+
+        <!-- <select>
+            <option>
+            One
+            </option>
+            <option>
+            Second
+            </option>
+            <option>
+            Thrid
+            </option>
+            </select> -->
+        <input id="inputID" type="text" value="JAVA" />
+        <input type="radio" />
+        <input type="checkbox" />
+
+        <div id='myDIV'> MY DIV
+            <div id='innerDIV'>Inner Div</div>
+        </div>
+
+        <!-- <p id='myDIV'> My paragraph
+        <div id='innerDIV'> INNEr DIV</div>
+        </div> -->
+
+        <input id="inputID1" type="text" value="first" />
+        <input id="inputID2" type="text" value="second" />
+        <ul id="programs" type="list">
+            <li>Java</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>NodeJS</li>
+        </ul>
+        <div id="outer">My DIv</div>
+
+        <textarea></textarea>
+
+        <select>
+            <option>One</option>
+            <option>Two</option>
+        </select>
+
+        <select multiple>
+            <option>One</option>
+            <option>Two</option>
+        </select>
+        <div id="1">
+            Hello
+        </div>
+        <div id="2">
+            JAVA
+        </div>
+        <div id="3">
+            switch this
+        </div>
+
+        <button>Button</button>
+        <input type="button" value="button" />
+    </form>
+
+</body>
+
+</html>
+
+<!-- radiobuttons
+<input type="text">
+<button></button>
+checkboxes
+textfield
+password
+dropdown -->
