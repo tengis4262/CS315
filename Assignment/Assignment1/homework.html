@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .head {
+        padding: 5px;
+        text-align: center;
+        background-color: bisque;
+    }
+
+    .foot {
+        padding: 5px;
+        text-align: center;
+        background-color: purple;
+        color: white;
+    }
+</style>
+<script>
+    let sel = '';
+    function change() {
+        var selOption = document.querySelector("select[name='opt'] option:checked");
+        sel = selOption.innerHTML.trim();
+
+        let di = document.querySelector('div');
+
+        let elem = document.createElement('input')
+        let elem1 = document.createElement('input')
+        let elem2 = document.createElement('input')
+        let elem3 = document.createElement('input')
+
+        di.append(elem);
+        di.append(elem1);
+        di.append(elem2);
+        di.append(elem3);
+        if (sel == 'Vegas') {
+            elem.outerHTML = '<input type="checkbox" value="Bellagio" name="casino" /><label>Bellagio</label>'
+            elem1.outerHTML = '<input type="checkbox" value="Paris" name="casino" /><label>Paris</label>'
+            elem2.outerHTML = '<input type="checkbox" value="Venetian" name="casino" /><label>Venetian</label>'
+            elem3.outerHTML = '<input type="checkbox" value="Ceasars" name="casino" /><label>Ceasars</label>'
+
+        }
+
+        var changeOpt = document.querySelector("item[id='changes']")
+        changeOpt.innerHTML = sel;
+    }
+
+    function submit(){
+        var res = document.querySelectorAll('div input:checked');
+        console.log(res)
+
+        let values = ''
+        for(let hotels of res){
+            values+=hotels.value+' ';
+        }
+        console.log("hello"+ values)
+        alert(`City: ${sel}\n Casino : ${values}`)
+    }
+
+</script>
+
+<body>
+    <p class="head">Cities</p>
+    <label>Cities</label>
+    <select name="opt">
+        <option>Vegas</option>
+        <option>Chicago</option>
+        <option>Los Angeles</option>
+        <option>Dallas</option>
+        <option>San Francisco</option>
+        <option>New York</option>
+
+    </select>
+    <button onclick="change()">Choose</button>
+    <br>
+    <item type="text">Destination City :<item id="changes"> city</item>
+    </item>
+    <div>
+        Hotel Casino:
+    </div>
+    <button onclick="submit()">Submit</button>
+    <p class="foot">Cities</p>
+
+
+</body>
+
+</html>
